@@ -535,7 +535,7 @@ footer {
     flex-wrap: wrap;
     border-radius: 10px;
     transition: 0.3s;
-    width: auto;
+    width: 800px;
     align-items: center;
 }
 
@@ -567,6 +567,7 @@ footer {
     border-radius: 10px;
     width: 80px;
     height: 80px;
+    background-color: rgba(255, 255, 255, 0.801);
 }
 
 .qty-input {
@@ -579,4 +580,19 @@ footer {
 
 .c-white {
     color: white;
+}
+
+#toast-message {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1050;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }

@@ -61,7 +61,11 @@
                 <img src="assets/imgs/icons/carrinho.png" alt="icone de novidades"><p class="p-0 m-0 m-2 d-inline">Carrinho</p><img src="assets/imgs/icons/seta-direita.png" alt="seta para direita">
             </h2>
             <div class="d-flex justify-content-center ">
-                <section id="cart-itens" class="box-galeria-cart container-fluid justify-content-start">
+                <article id="empty-cart-message" class="box-empyt-cart d-none">
+                <h3>Seu carrinho está vazio</h3>
+                <a href="index.html" class="btn btn-primary mt-3">Ver produtos</a>
+            </article>
+                <section id="cart-itens" class="box-galeria-cart container-fluid justify-content-start d-none">
                 </section>
                 <article class="box-total-price">
                     <h3 class="h5 mb-5">Resumo do Pedido</h3>
@@ -80,18 +84,18 @@
                     </div>
                     <div class="d-flex flex-column">
                         <button class="btn btn-primary mb-2" id="checkout-button">Finalizar Compra</button>
-                        <a href="" class="btn btn-secondary">Continuar Comprando</a>
+                        <a href="index.html" rel="nofollow" target="_self" class="btn btn-secondary">Continuar Comprando</a>
                     </div>
                 </article>
             </div>
-            <article id="empty-cart-message" class="box-empyt-cart container-fluid">
+            <article id="empty-cart-message" class="box-empyt-cart container-fluid d-none">
                 <h3>Seu carrinho está vazio</h3>
                 <a href="index.html" class="btn btn-primary mt-3">Ver produtos</a>
             </article>
         </div>
     </main>
-    <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
