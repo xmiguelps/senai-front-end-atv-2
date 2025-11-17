@@ -37,9 +37,16 @@ document.addEventListener('DOMContentLoaded' , () => {
         });
     });
 
-    let cont = 0;
+    //--------------------------------------------------------------------
     const contCarrinho = document.querySelector('.numero-produtos');
     const comprarButton = document.querySelectorAll('.comprar-button');
+
+    if (!localStorage.getItem('contador')) {
+        localStorage.setItem('contador', 0);
+    }
+    cont = Number(localStorage.getItem('contador'));
+    contCarrinho.textContent = cont
+
 
     if (comprarButton && comprarButton.length) {
         comprarButton.forEach(img => {
@@ -47,22 +54,24 @@ document.addEventListener('DOMContentLoaded' , () => {
                 event.preventDefault();
                 if (img.src.includes('comprar-button.png')) {
                     img.src = 'assets/imgs/icons/comprar-button-check.png'
-                    img.classList.remove('comprar-button')
-                    img.classList.add('comprar-button-2')
-
+                    img.classList.remove('comprar-button');
+                    img.classList.add('comprar-button-2');
                     cont++
-                    if (contCarrinho) contCarrinho.innerText = `${cont}`
+                    localStorage.setItem('contador', cont);
+                    if (contCarrinho) contCarrinho.textContent = cont
                 } else {
                     img.src = 'assets/imgs/icons/comprar-button.png'
-                    img.classList.remove('comprar-button-2')
-                    img.classList.add('comprar-button')
+                    img.classList.remove('comprar-button-2');
+                    img.classList.add('comprar-button');
                     cont--
-                    if (contCarrinho) contCarrinho.innerText = `${cont}`
+                    localStorage.setItem('contador', cont);
+                    if (contCarrinho) contCarrinho.textContent = cont
                 }
             });
         });
     }
 
+    //---------------------------------------------------------------------
     const inputLogin = document.querySelectorAll('.input-login')
     inputLogin.forEach(input => {
         input.addEventListener('keyup', (event) => {
