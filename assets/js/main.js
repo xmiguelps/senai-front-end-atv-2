@@ -25,53 +25,7 @@ document.addEventListener('DOMContentLoaded' , () => {
             }
         });
     }
-    
-    document.querySelectorAll('.favorite-icon').forEach(img => {
-        img.addEventListener('click', (event) => {
-            event.preventDefault();
-            if (img.src.includes('favorite-button.png')) {
-                img.src = 'assets/imgs/icons/favorite-button-hover.png'
-            } else {
-                img.src = 'assets/imgs/icons/favorite-button.png'
-            }
-        });
-    });
 
-    //--------------------------------------------------------------------
-    const contCarrinho = document.querySelector('.numero-produtos');
-    const comprarButton = document.querySelectorAll('.comprar-button');
-
-    if (!localStorage.getItem('contador')) {
-        localStorage.setItem('contador', 0);
-    }
-    cont = Number(localStorage.getItem('contador'));
-    contCarrinho.textContent = cont
-
-
-    if (comprarButton && comprarButton.length) {
-        comprarButton.forEach(img => {
-            img.addEventListener('click', (event) => {
-                event.preventDefault();
-                if (img.src.includes('comprar-button.png')) {
-                    img.src = 'assets/imgs/icons/comprar-button-check.png'
-                    img.classList.remove('comprar-button');
-                    img.classList.add('comprar-button-2');
-                    cont++
-                    localStorage.setItem('contador', cont);
-                    if (contCarrinho) contCarrinho.textContent = cont
-                } else {
-                    img.src = 'assets/imgs/icons/comprar-button.png'
-                    img.classList.remove('comprar-button-2');
-                    img.classList.add('comprar-button');
-                    cont--
-                    localStorage.setItem('contador', cont);
-                    if (contCarrinho) contCarrinho.textContent = cont
-                }
-            });
-        });
-    }
-
-    //---------------------------------------------------------------------
     const inputLogin = document.querySelectorAll('.input-login')
     inputLogin.forEach(input => {
         input.addEventListener('keyup', (event) => {
@@ -127,22 +81,22 @@ $(function () {
         cart.forEach(function(item) {
             var line = item.price * item.qty;
             var $art = $(
-                '<article class="product-cart d-flex align-items-start p-4" data-id="'+item.id+'">' + 
-                    '<div class="d-flex align-items-center justify-content-between w-100">' + 
+                '<article class="product-cart d-flex align-items-start p-4 m-2" data-id="'+item.id+'">' + 
+                    '<div class="box-cart d-flex align-items-center justify-content-between w-100">' + 
                         '<div class="d-flex align-items-center">' + 
                             '<img class="img-product-cart mx-2" src="'+item.img+'" alt="'+item.title+'">' + 
                         '<span>'+item.title+'</span>'+ 
                         '</div>' + 
-                        '<div class="d-flex">' + 
-                            '<div class="d-flex align-items-center">' + 
+                        '<div class="d-flex box-cart">' + 
+                            '<div class="d-flex align-items-center box-input">' + 
                             '<button class="btn c-white btn-plus">+</button>' + 
                             '<input class="qty-input" type="number" min="1" value="'+item.qty+'">' + 
                             '<button class="btn c-white btn-minus">-</button>' + 
                         '</div>' + 
-                        '<div class="d-flex align-items-center ms-5">' + 
+                        '<div class="d-flex align-items-center w-auto">' + 
                             '<span class="line-total"><strong>'+formatPrice(line)+'</strong></span>' + 
                         '</div>' + 
-                        '<div class="d-flex align-items-center ms-3">' + 
+                        '<div class="d-flex align-items-center box-remove">' + 
                             '<a href="" class="text-danger remove-item">Remover</a>' + 
                         '</div></div></div></article>');
             $container.append($art);
@@ -159,6 +113,40 @@ $(function () {
         $('#total-value').text(formatPrice(subtotal));
     }
 
+    const contCarrinho = document.querySelector('.numero-produtos');
+    const comprarButton = document.querySelectorAll('.comprar-button');
+
+    if (!localStorage.getItem('contador')) {
+        localStorage.setItem('contador', 0);
+    }
+    cont = Number(localStorage.getItem('contador'));
+    contCarrinho.textContent = cont
+
+    if (comprarButton.id == 'comprar-on') {
+        comprarButton.src = 'assets/imgs/icons/comprar-button-check.png'
+    } else {
+        comprarButton.src = 'assets/imgs/icons/comprar-button.png'
+    }
+
+    if (comprarButton && comprarButton.length) {
+        comprarButton.forEach(img => {
+            img.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (img.src.includes('comprar-button.png')) {
+                    cont++
+                    localStorage.setItem('contador', cont);
+                    contCarrinho.textContent = cont
+                }
+            });
+        });
+    }
+
+    function menos1Cont () {
+        cont--
+        localStorage.setItem('contador', cont);
+        contCarrinho.textContent = cont
+    }
+
     function bindCartEvents() {
         $('.remove-item').off('click').on('click', function(e) {
             e.preventDefault();
@@ -166,6 +154,7 @@ $(function () {
             var cart = getCart().filter(function(it) { return it.id !== id; });
             saveCart(cart);
             renderCart();
+            menos1Cont();
         });
         $('.qty-input').off('change').on('change', function() {
             var $inp = $(this);
@@ -202,9 +191,63 @@ $(function () {
         if (found) found.qty = (found.qty || 1) + 1; else cart.push({id:id, title:title, price:price, img:img, qty:1});
         saveCart(cart);
         renderCart();
-        showToast('Produto adicionado no carrinho!');
+        showToast('Produto adicionado no Carrinho!');
+    });
+
+    function getFavorite() {
+        try { return JSON.parse(localStorage.getItem('favorite') || '[]'); }
+        catch (e) { return []; }
+    }
+    function saveFavorite(favorite) { localStorage.setItem('favorite', JSON.stringify(favorite)); }
+
+    function renderFavorite() {
+        var $container = $('#favorite-itens');
+        if ($container.length === 0) return;
+        var favorite = getFavorite();
+        $container.empty();
+        if (!favorite || favorite.length === 0) {
+            $('#empty-favorite-message').removeClass('d-none');
+            $container.addClass('d-none')
+            return;
+        }
+        $('#empty-favorite-message').addClass('d-none')
+        $container.removeClass('d-none')
+        favorite.forEach(function(item) {
+            var $art = $('<article class="box-products-favorite" data-id="'+item.id+'">' +
+                '<div class="d-flex flex-column box-favorite">' +
+                '<h3 class="title-products-favorite">'+item.title+'</h3>' +
+                '<img class="img-products-favorite" src="'+item.img+'" alt="'+item.title+'">' +
+                '<div class="box-text-favorite">' +
+                '<p class="price-favorite">'+item.price+'</p>' +
+                '<div>' +
+                '<input class="comprar" id="comprar20" type="button" value="Comprar">' +
+                '<label class="box-comprar-button" for="comprar"><img class="comprar-button" src="assets/imgs/icons/comprar-button.png" alt="botão de comprar"></label>' +
+                '<button class="favoriter-button"><img class="favorite-icon" src="assets/imgs/icons/favorite-button-remove.png" alt="botão de favoritar"></button>' +
+                '</div></div></div></article>'
+            );
+            $container.append($art);
+        });
+    }
+
+    $(document).on('click', '.favorite-icon', function(e) {
+        e.preventDefault();
+        var $product = $(this).closest('.box-products');
+        var title = $product.find('.title-products').text().trim();
+        var priceText = $product.find('.price').text().trim();
+        var cleaned = (priceText || '').replace(/[^0-9,.-]+/g, '').replace('.', '').replace(',', '.');
+        var price = parseFloat(cleaned) || 0;
+        var img = $product.find('img').attr('src') || '';
+        var id = $product.data('id') || title.replace(/\s+/g,'-').toLowerCase();
+        var favorite = getFavorite();
+        var found = favorite.find(function(it){ return it.id === id});
+        if (found) found.qty = (found.qty || 1) + 1; else favorite.push({id:id, title:title, price:price, img:img, qty:1});
+        saveFavorite(favorite);
+        renderFavorite();
+        showToast('Produto adicionado em Favoritos!');
     });
 
     $('body').append('<div id="toast-message"></div>');
     renderCart();
+    $('body').append('<div id="favorite-toast-message"></div>')
+    renderFavorite();
 })
