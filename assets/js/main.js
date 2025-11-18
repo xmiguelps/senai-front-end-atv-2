@@ -200,6 +200,16 @@ $(function () {
     }
     function saveFavorite(favorite) { localStorage.setItem('favorite', JSON.stringify(favorite)); }
 
+    function bindFavoriteEvents() {
+        $('.remove-favorite').off('click').on('click', function(e) {
+            e.preventDefault();
+            var id = $(this).closest('.box-products-favorite').data('id');
+            var favorite = getFavorite().filter(function(it) { return   it.id !== id; });
+            saveFavorite(favorite);
+            renderFavorite();
+        });
+    }
+
     function renderFavorite() {
         var $container = $('#favorite-itens');
         if ($container.length === 0) return;
@@ -220,13 +230,14 @@ $(function () {
                 '<div class="box-text-favorite">' +
                 '<p class="price-favorite">'+item.price+'</p>' +
                 '<div>' +
-                '<input class="comprar" id="comprar20" type="button" value="Comprar">' +
-                '<label class="box-comprar-button" for="comprar"><img class="comprar-button" src="assets/imgs/icons/comprar-button.png" alt="botão de comprar"></label>' +
-                '<button class="favoriter-button"><img class="favorite-icon" src="assets/imgs/icons/favorite-button-remove.png" alt="botão de favoritar"></button>' +
+                '<input class="comprar" id="comprar-'+item.id+'" type="button" value="Comprar">' +
+                '<label class="box-comprar-button" for="comprar-'+item.id+'"><img class="comprar-button" src="assets/imgs/icons/comprar-button.png" alt="botão de comprar"></label>' +
+                '<button class="favoriter-button"><img class="remove-favorite" src="assets/imgs/icons/favorite-button-remove.png" alt="botão de favoritar"></button>' +
                 '</div></div></div></article>'
             );
             $container.append($art);
         });
+        bindFavoriteEvents();
     }
 
     $(document).on('click', '.favorite-icon', function(e) {

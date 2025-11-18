@@ -616,6 +616,17 @@ footer {
     }
 }
 
+.box-empyt-favorite {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 800px;
+    align-items: center;
+}
+
 .box-galeria-favorite {
     margin: 0px 20px 0px 20px;
     display: flex;
@@ -678,4 +689,12 @@ footer {
     font-size: 20px;
     font-weight: bold;
     padding: 0px;
+}
+
+.remove-favorite {
+    transition: transform 0.3s ease;
+}
+
+.remove-favorite:hover {
+    transform: scale(1.2);
 }
