@@ -700,3 +700,26 @@ footer {
 .remove-favorite:hover {
     transform: scale(1.2);
 }
+
+.box-contate {
+    width: 300px;
+}
+
+.icons-contate {
+    width: 64px;
+    height: 64px;
+}
+
+.text-contate {
+    font-size: large;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.box-nos-contate {
+    width: 450px;
+    height: 730px;
+    background-color: #0d2f79;
+    border-radius: 15px;
+    box-shadow: #0000003d 1px 1px 10px;
+}
