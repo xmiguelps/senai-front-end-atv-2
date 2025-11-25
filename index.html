@@ -9,31 +9,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-loja">
+    <header class="d-flex align-items-center justify-content-between">
+        <div class="m-3">
             <img src="assets/imgs/icons/logo-loja.png" alt="logo-loja">
         </div>
-        <menu> <!-- Menu aqui -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
+        <menu class="ps-0 w-100"> <!-- Menu aqui -->
+            <nav class="navbar navbar-expand-lg navbar-dark me-2 mt-3">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="box-for-navbar collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="box-search-and-buttons">
+                <div class="d-flex justify-content-evenly collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="box-search-and-buttons d-flex align-items-center">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                              <li class="nav-item">
-                                <a class="login-button nav-link active" aria-current="page" href="login.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/login.png" alt="login icon"><p class=" login-text">Login</p></a>
+                                <a class="login-button d-flex mt-1 nav-link active" aria-current="page" href="login.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/login.png" alt="login icon"><p class="p-1 m-0">Login</p></a>
                             </li>
                             <li class="nav-item">
-                                <a class="favorite-button nav-link active" aria-current="page" href="favorites.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/heart.png" alt="favorites icon"><p class="p-0 favorite-text">Favoritos</p></a>
+                                <a class="favorite-button d-flex mt-2 me-1 nav-link active" aria-current="page" href="favorites.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/heart.png" alt="favorites icon"><p class="p-0 m-0 ms-1">Favoritos</p></a>
                             </li>
-                            <li class="box-carrinho nav-item">
+                            <li class="box-carrinho ps-1 nav-item">
                                 <a class="carrinho nav-link" href="carrinho.html" rel="nofollow" target="_self">
-                                    <div class="box-icon-img-carrinho">
+                                    <div class="box-icon-img-carrinho d-flex">
                                         <div class="box-icon-carrinho">
                                             <img class="icon-carrinho" src="assets/imgs/icons/carrinho.png" alt="carrinho">
                                         </div>
-                                        <div class="box-text-carrinho">
+                                        <div class="box-text-carrinho d-flex flex-column justify-content-center">
                                             <p class="p-0 m-0 text-carrinho">carrinho</p>
                                             <p class="p-0 m-0 text-carrinho"><span class="numero-produtos">0</span> produtos</p>
                                         </div>
@@ -84,13 +84,13 @@
                 </div>
             </div>
         </section>
-        <section class="box-destaques"> <!--Destaques aqui-->
+        <section class="d-flex flex-column"> <!--Destaques aqui-->
             <h2 class="title-galerias">
                 <img src="assets/imgs/icons/destaques.png" alt="icone de novidades"> Destaques <img src="assets/imgs/icons/seta-direita.png" alt="seta para direita">
             </h2>
             <p class="text-galerias">Veja aqui os produtos mais vendidos em nossa loja:</p>
             <div class="d-flex justify-content-center">
-                <article class="box-galeria-destaques container-fluid">
+                <article class="box-galeria-destaques mt-4 me-3 mb-0 ms-3 d-flex justify-content-evenly flex-wrap w-auto container-fluid">
                     <div class="box-products">
                         <h3 class="title-products">Notebook Gamer</h3>
                         <img class="products" src="assets/imgs/destaques/notebook-gamer.png" alt="notebook gamer">
@@ -177,7 +177,7 @@
                 <img src="assets/imgs/icons/novidades.png" alt="icone de novidades"> Novidades <img src="assets/imgs/icons/seta-direita.png" alt="seta para direita">
             </h2>
             <p class="text-galerias">Veja aqui os produtos recentementes adicionados á nossa loja:</p>
-            <article class="box-novidades d-flex container-fluid">
+            <article class="box-novidades flex-wrap justify-content-center align-items-center d-flex container-fluid">
                 <img class="d-block banner-novidades" src="assets/imgs/banners/banner-novidades-1.jpg" alt="banner de novidades">
                 <img class="d-block banner-novidades" src="assets/imgs/banners/banner-novidades-2.jpg" alt="banner de novidades">
                 <img class="d-block banner-novidades" src="assets/imgs/banners/banner-novidades-3.jpg" alt="banner de novdidades">
@@ -431,7 +431,7 @@
         </section>
     </main>
     <footer> <!--Rodapé aqui-->
-        <section class="box-rodape mt-5 p-4 d-flex justify-content-evenly">
+        <section class="box-rodape mt-5 p-4 d-flex justify-content-evenly h-auto flex-wrap">
             <article class="box-text-rodape">
                 <h2 class="mb-2">Sobre nós</h2>
                 <hr>
@@ -444,15 +444,15 @@
                 <hr>
                 <div class="d-flex flex-column">
                     <div class="d-flex">
-                        <img class="icons-rodape" src="assets/imgs/icons/phone.png" alt="icone de telefone">
+                        <img class="icons-rodape me-2" src="assets/imgs/icons/phone.png" alt="icone de telefone">
                         <p>13-1234-5678</p>
                     </div>
                     <div class="d-flex">
-                        <img class="icons-rodape" src="assets/imgs/icons/email.png" alt="icone de email">
+                        <img class="icons-rodape me-2" src="assets/imgs/icons/email.png" alt="icone de email">
                         <p>contatoempresa@gmail.com</p>
                     </div>
                     <div class="d-flex">
-                        <img class="icons-rodape" src="assets/imgs/icons/local.png" alt="icone de localização">
+                        <img class="icons-rodape me-2" src="assets/imgs/icons/local.png" alt="icone de localização">
                         <p>Rua Game Mania Santos, 123</p>
                     </div>
                 </div>
@@ -461,12 +461,12 @@
                 <h2 class="mb-2">Patrocinadores</h2>
                 <hr>
                 <div class="box-imgs-patrocinadores">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-acer.png" alt="patrocinador acer">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-apple.png" alt="patrocinador apple">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-asus.png" alt="patrocinador asus">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-dell.png" alt="patrocinador dell">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-msi.png" alt="patrocinador msi">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-ROG.png" alt="patrocinador ROG">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-acer.png" alt="patrocinador acer">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-apple.png" alt="patrocinador apple">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-asus.png" alt="patrocinador asus">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-dell.png" alt="patrocinador dell">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-msi.png" alt="patrocinador msi">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-ROG.png" alt="patrocinador ROG">
                 </div>
             </article>
         </section>

@@ -10,40 +10,23 @@ body > header {
     justify-content: space-between;
 }
 
-.logo-loja {
-    margin: 20px;
-}
-
 header {
     background-color: #071a42;
 }
 
 header > menu {
-    width: 100vw;
     margin-block-start: 0px;
-    padding-left: 0px;
 }
 
 menu > nav {
     border-radius: 7px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
-
-.box-for-navbar {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .box-search-and-buttons {
-    display: flex; 
-    align-items: center; 
     flex: 0 1 80%;
 }
 
 .login-button {
-    margin-top: 5px; 
-    display: flex;
     width: 100px;
     border-radius: 5px;
 }
@@ -52,17 +35,9 @@ menu > nav {
     border: white 1px solid;
 }
 
-.login-text {
-    padding-top: 5px;
-    margin: 0px 0px 0px 4px;
-}
-
 .favorite-button {
-    display: flex;
-    margin-top: 10px; 
     width: 120px;
     border-radius: 5px;
-    margin-right: 5px;
     transition: 0.3s;
 }
 
@@ -70,17 +45,10 @@ menu > nav {
     border: white 1px solid;
 }
 
-.favorite-text {
-    margin: 0px 0px 0px 4px;
-}
-
 .box-carrinho {
-    margin: 0px 10px 0px 10px;
+    margin: 5px 10px 0px auto;
     background-color: green;
-    padding-left: 4px;
     border-radius: 7px;
-    margin-left: auto;
-    margin-top: 5px;
     transition: 0.3s;
 }
 
@@ -91,7 +59,6 @@ menu > nav {
 .box-icon-img-carrinho {
     width: 130px; 
     height: 50px; 
-    display: flex;
 }
 
 .box-icon-carrinho {
@@ -103,9 +70,6 @@ menu > nav {
 }
 
 .box-text-carrinho {
-    display: flex; 
-    flex-flow: column; 
-    justify-content: center;
     margin-top: -5px;
 }
 
@@ -134,7 +98,6 @@ menu > nav {
 }
 
 #carouselExampleControls img {
-    width: auto;
     height: 290px;
 }
 
@@ -160,9 +123,6 @@ menu > nav {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-}
-
 @media screen and (max-width: 767px) {
     #carouselExampleControls img {
         width: auto;
@@ -170,13 +130,14 @@ menu > nav {
     }
 }
 
-.box-destaques {
-    display: flex;
-    flex-flow: column;
-}
-
 .title-galerias {
     margin: 55px 0px 30px 150px;
+}
+
+@media screen and (max-width:412px) {
+    .title-galerias {
+        margin-left: 40px;
+    }
 }
 
 .text-galerias  {
@@ -213,14 +174,9 @@ menu > nav {
 }
 
 .box-galeria-destaques {
-    margin: 30px 20px 0px 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     border: #2c4f9b 2px solid;
     border-radius: 10px;
     transition: 0.3s;
-    width: auto;
 }
 
 .box-galeria-destaques:hover {
@@ -317,9 +273,6 @@ menu > nav {
 
 .box-novidades {
     flex-flow: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 
 .banner-novidades {
@@ -342,11 +295,6 @@ footer {
     background-color: #3a3d42;
 }
 
-.box-rodape {
-    height: auto;
-    flex-wrap: wrap;
-}
-
 .box-text-rodape {
     width: 300px;
     margin: 0px 15px;
@@ -355,7 +303,6 @@ footer {
 .icons-rodape {
     width: 30px;
     height: 30px;
-    margin-right: 10px;
 }
 
 .text-rodape {
@@ -370,10 +317,6 @@ footer {
     background-color: white;
     border-radius: 5px;
     height: 200px;
-}
-
-.img-patrocinadores {
-    margin: 10px;
 }
 
 .box-final-rodape {
@@ -408,11 +351,6 @@ footer {
     background-color: #0b2866
 }
 
-.main-login {
-    width: 100%;
-    height: 100%;
-}
-
 .box-login {
     width: 450px;
     height: 650px;
@@ -431,17 +369,11 @@ footer {
     text-decoration: underline;
 }
 
-.form-login {
-    margin-top: 20px;
-}
-
 .input-login {
-    margin: 10px;
     border-radius: 15px;
     width: 300px;
     height: 45px;
     border: 1px solid #ccc;
-    padding-left: 10px;
     transition: 0.3s;
 }
 
@@ -451,7 +383,6 @@ footer {
 
 .trocar-senha {
     color: #d4d4d49c;
-    text-align: right;
     text-decoration: none;   
 }
 
@@ -558,23 +489,11 @@ footer {
     color: white;
 }
 
-.none-decoration {
-    text-decoration: none;
-}
-
 .box-empyt-cart {
-    margin: 30px 0px;
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
     border-radius: 10px;
     transition: 0.3s;
     flex: 0 1 800px;
-    align-items: center;
-    justify-content: center;
     border: #2c4f9b 2px solid;
-    margin-right: 20px;
-    padding: 10px;
 }
 
 @media screen and (max-width: 991px) {
@@ -586,20 +505,14 @@ footer {
 
 .box-galeria-cart {
     margin: 0px 20px 0px 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     border-radius: 10px;
     transition: 0.3s;
     max-width: 700px;
-    flex-flow: column;
-    align-items: center;
 }
 
 .box-total-price {
     border: #2c4f9b 2px solid;
     border-radius: 5px;
-    padding: 15px;
     width: 400px;
     height: 325px;
 }
@@ -622,7 +535,6 @@ footer {
     height: 30px;
     border-radius: 10px;
     border: none;
-    text-align: right;
 }
 
 .c-white {
@@ -652,10 +564,6 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.box-remove {
-    margin-left: 8px;
-}
-
 @media screen and (max-width: 991px) {
     .box-cart-price {
         flex-flow: column;
@@ -680,77 +588,18 @@ footer {
 
 .box-empyt-favorite {
     margin-top: 30px;
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
     border-radius: 10px;
     transition: 0.3s;
-    width: auto;
-    align-items: center;
     margin-bottom: 50px;
 }
 
 .box-galeria-favorite {
     margin: 0px 20px 0px 20px;
-    display: flex;
-    flex-wrap: wrap;
     border-radius: 10px;
     transition: 0.3s;
-    width: auto;
-    align-items: center;
     border: #2c4f9b 2px solid;
     border-radius: 10px;
     padding: 20px;
-}
-
-.box-products-favorite {
-    width: 250px;
-    margin: 20px;
-}
-
-.product-favorite {
-    padding: 8px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 30px 15px;
-    display: flex;
-    flex-flow: column;
-}
-
-.box-favorite {
-    background-image: linear-gradient(to bottom, #a51616,#520505);
-    padding-bottom: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.title-products-favorite {
-    text-align: center;
-    margin: 10px 10px 8px 0px;
-    font-size: 20px;
-}
-
-.img-products-favorite {
-    width: 150px;
-    height: 150px;
-    margin: 0px 25px 0px 25px;
-    background-color: azure;
-    border-radius: 3px;
-}
-
-.box-text-favorite {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-flow: column;
-}
-
-.price-favorite {
-    margin: 0px 10px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 0px;
 }
 
 .remove-favorite {
@@ -768,12 +617,6 @@ footer {
 .icons-contate {
     width: 64px;
     height: 64px;
-}
-
-.text-contate {
-    font-size: large;
-    margin: 0px;
-    margin-left: 20px;
 }
 
 .box-nos-contate {

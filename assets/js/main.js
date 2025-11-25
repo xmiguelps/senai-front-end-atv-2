@@ -90,13 +90,13 @@ $(function () {
                         '<div class="d-flex box-cart">' + 
                             '<div class="d-flex align-items-center box-input">' + 
                             '<button class="btn c-white btn-plus">+</button>' + 
-                            '<input class="qty-input" type="number" min="1" value="'+item.qty+'">' + 
+                            '<input class="qty-input text-end" type="number" min="1" value="'+item.qty+'">' + 
                             '<button class="btn c-white btn-minus">-</button>' + 
                         '</div>' + 
                         '<div class="d-flex align-items-center w-auto">' + 
                             '<span class="line-total"><strong>'+formatPrice(line)+'</strong></span>' + 
                         '</div>' + 
-                        '<div class="d-flex align-items-center box-remove">' + 
+                        '<div class="d-flex align-items-center ms-2">' + 
                             '<a href="" class="text-danger remove-item">Remover</a>' + 
                         '</div></div></div></article>');
             $container.append($art);
@@ -203,7 +203,7 @@ $(function () {
     function bindFavoriteEvents() {
         $('.remove-favorite').off('click').on('click', function(e) {
             e.preventDefault();
-            var id = $(this).closest('.box-products-favorite').data('id');
+            var id = $(this).closest('.box-products').data('id');
             var favorite = getFavorite().filter(function(it) { return   it.id !== id; });
             saveFavorite(favorite);
             renderFavorite();
@@ -223,17 +223,16 @@ $(function () {
         $('#empty-favorite-message').addClass('d-none')
         $container.removeClass('d-none')
         favorite.forEach(function(item) {
-            var $art = $('<article class="box-products-favorite" data-id="'+item.id+'">' +
-                '<div class="d-flex flex-column box-favorite">' +
-                '<h3 class="title-products-favorite">'+item.title+'</h3>' +
-                '<img class="img-products-favorite" src="'+item.img+'" alt="'+item.title+'">' +
-                '<div class="box-text-favorite">' +
-                '<p class="price-favorite">'+item.price+'</p>' +
+            var $art = $('<article class="box-products" data-id="'+item.id+'">' +
+                '<h3 class="title-products">'+item.title+'</h3>' +
+                '<img class="products" src="'+item.img+'" alt="'+item.title+'">' +
+                '<div class="box-text-products">' +
+                '<p class="price">'+item.price+'</p>' +
                 '<div>' +
                 '<input class="comprar" id="comprar-'+item.id+'" type="button" value="Comprar">' +
                 '<label class="box-comprar-button" for="comprar-'+item.id+'"><img class="comprar-button" src="assets/imgs/icons/comprar-button.png" alt="botão de comprar"></label>' +
                 '<button class="favoriter-button"><img class="remove-favorite" src="assets/imgs/icons/favorite-button-remove.png" alt="botão de favoritar"></button>' +
-                '</div></div></div></article>'
+                '</div></div></article>'
             );
             $container.append($art);
         });

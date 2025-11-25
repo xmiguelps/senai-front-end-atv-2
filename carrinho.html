@@ -9,31 +9,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html" rel="nofollow" target="_self" class="logo-loja">
+    <header class="d-flex align-items-center justify-content-between">
+        <div class="m-3">
             <img src="assets/imgs/icons/logo-loja.png" alt="logo-loja">
-        </a>
-        <menu> <!-- Menu aqui -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
+        </div>
+        <menu class="ps-0 w-100"> <!-- Menu aqui -->
+            <nav class="navbar navbar-expand-lg navbar-dark me-2 mt-3">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="box-for-navbar collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="box-search-and-buttons">
+                <div class="d-flex justify-content-evenly collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="box-search-and-buttons d-flex align-items-center">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                              <li class="nav-item">
-                                <a class="login-button nav-link active" aria-current="page" href="login.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/login.png" alt="login icon"><p class=" login-text">Login</p></a>
+                                <a class="login-button d-flex mt-1 nav-link active" aria-current="page" href="login.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/login.png" alt="login icon"><p class="p-1 m-0">Login</p></a>
                             </li>
                             <li class="nav-item">
-                                <a class="favorite-button nav-link active" aria-current="page" href="favorites.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/heart.png" alt="favorites icon"><p class="p-0 favorite-text">Favoritos</p></a>
+                                <a class="favorite-button d-flex mt-2 me-1 nav-link active" aria-current="page" href="favorites.html" rel="nofollow" target="_self"><img src="assets/imgs/icons/heart.png" alt="favorites icon"><p class="p-0 m-0 ms-1">Favoritos</p></a>
                             </li>
-                            <li class="box-carrinho nav-item">
+                            <li class="box-carrinho ps-1 nav-item">
                                 <a class="carrinho nav-link" href="carrinho.html" rel="nofollow" target="_self">
-                                    <div class="box-icon-img-carrinho">
+                                    <div class="box-icon-img-carrinho d-flex">
                                         <div class="box-icon-carrinho">
                                             <img class="icon-carrinho" src="assets/imgs/icons/carrinho.png" alt="carrinho">
                                         </div>
-                                        <div class="box-text-carrinho">
+                                        <div class="box-text-carrinho d-flex flex-column justify-content-center">
                                             <p class="p-0 m-0 text-carrinho">carrinho</p>
                                             <p class="p-0 m-0 text-carrinho"><span class="numero-produtos">0</span> produtos</p>
                                         </div>
@@ -48,7 +48,7 @@
                     </div>
                     <ul class="box-contact navbar-nav mb-2 mb-lg-0" >
                         <li class="nav-item">
-                            <a class="nav-link box-contact-text" href="contatos.html" rel="nofollow" target="_blank"> <img src="assets/imgs/icons/phone.png" alt="icone de telefone"> Nos-Contate </a>
+                            <a class="nav-link box-contact-text" href="contatos.html" rel="nofollow" target="_self"> <img src="assets/imgs/icons/phone.png" alt="icone de telefone"> Nos-Contate </a>
                         </li>
                     </ul>
                 </div>
@@ -61,13 +61,13 @@
                 <img src="assets/imgs/icons/carrinho.png" alt="icone de novidades"><p class="p-0 m-0 m-2 d-inline">Carrinho</p><img src="assets/imgs/icons/seta-direita.png" alt="seta para direita">
             </h2>
             <div class="d-flex justify-content-center box-cart-price">
-                <article id="empty-cart-message" class="box-empyt-cart d-none">
+                <article id="empty-cart-message" class="box-empyt-cart d-none d-flex flex-column flex-wrap justify-content-center align-items-center p-2 mt-4 mb-4 mr-3 ms-0">
                 <h3>Seu carrinho está vazio</h3>
                 <a href="index.html" class="btn btn-primary mt-3">Ver produtos</a>
             </article>
-                <section id="cart-itens" class="box-galeria-cart container-fluid justify-content-start d-none">
+                <section id="cart-itens" class="box-galeria-cart container-fluid justify-content-start d-none d-flex flex-wrap flex-column align-items-center">
                 </section>
-                <article class="box-total-price">
+                <article class="box-total-price p-3 ms-3">
                     <h3 class="h5 mb-5">Resumo do Pedido</h3>
                     <div class="d-flex justify-content-between">
                         <p>Subtotal</p>
@@ -88,14 +88,10 @@
                     </div>
                 </article>
             </div>
-            <article id="empty-cart-message" class="box-empyt-cart container-fluid d-none">
-                <h3>Seu carrinho está vazio</h3>
-                <a href="index.html" class="btn btn-primary mt-3">Ver produtos</a>
-            </article>
         </div>
     </main>
     <footer> <!--Rodapé aqui-->
-        <section class="box-rodape mt-5 p-4 d-flex justify-content-evenly">
+        <section class="h-auto flex-wrap mt-5 p-4 d-flex justify-content-evenly">
             <article class="box-text-rodape">
                 <h2 class="mb-2">Sobre nós</h2>
                 <hr>
@@ -121,12 +117,12 @@
                 <h2 class="mb-2">Patrocinadores</h2>
                 <hr>
                 <div class="box-imgs-patrocinadores">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-acer.png" alt="patrocinador acer">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-apple.png" alt="patrocinador apple">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-asus.png" alt="patrocinador asus">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-dell.png" alt="patrocinador dell">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-msi.png" alt="patrocinador msi">
-                    <img class="img-patrocinadores" src="assets/imgs/patrocinadores/patrocinador-ROG.png" alt="patrocinador ROG">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-acer.png" alt="patrocinador acer">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-apple.png" alt="patrocinador apple">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-asus.png" alt="patrocinador asus">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-dell.png" alt="patrocinador dell">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-msi.png" alt="patrocinador msi">
+                    <img class="m-2" src="assets/imgs/patrocinadores/patrocinador-ROG.png" alt="patrocinador ROG">
                 </div>
             </article>
         </section>
